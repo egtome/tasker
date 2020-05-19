@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{form_title}}{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h3>{{form_title}}</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end (form) }}
+</div>
+{% endblock %}

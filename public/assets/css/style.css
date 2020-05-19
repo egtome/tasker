@@ -1,0 +1,184 @@
+
+/* 
+    Created on : May 12, 2020, 6:29:32 PM
+    Author     : Gino Tome
+*/
+body{
+    background: whitesmoke;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="textarea"],
+input[type="select"]{
+    width: 100%;
+    padding: 10px;
+}
+
+.task-description{
+    width: 100% !important;
+    height: 80px;
+    background: #e1dceb;
+}
+
+label{
+    display: block;
+    width: 80%;   
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button,
+input[type="submit"]{
+    padding: 15px;
+    margin-top: 15px;
+    background: #417153;
+    color: white;
+    border: 1px solid #488b62;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+button:hover,
+input[type="submit"]:hover{
+    background: #488b62;
+}
+
+#header{
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+}
+
+#menu{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    background: #eee;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+#menu li{
+    display: block;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+#menu a:hover {
+    color: #888;
+}
+
+#menu a{
+    display: block;
+    color: #444;
+    text-decoration: none;
+}
+
+#menu li.right{
+    float:right !important;
+    border-right: 0px;
+    border-left: 1px solid #ccc;
+}
+
+table{
+    width: 100%;
+}
+
+table th,
+table td{
+    padding: 15px 25px 15px 25px;
+    border-bottom: 1px solid #EEE;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+table td{
+    background: #f9f9f9;    
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.circle.high{
+    background: #FF0000 !important;
+}
+
+.circle.medium{
+    background: #FFFF00
+}
+
+.circle.low{
+    background: #00FF00
+}
+
+.priority {
+    text-align: center;
+}
+
+.priority.high{
+    color: #FF0000 !important;
+}
+
+
+.priority.medium{
+    color: #b3b343 !important;
+}
+
+.priority.low{
+    color: #00FF00 !important;
+}
+
+.mybuttons{
+    width: 33%;
+}
+
+.mybuttons a{
+    text-decoration: none;
+    border: 1px solid #0d0c0c;
+    padding: 3px;
+    color: #333;
+    font-size: 12px;
+}
+
+.mybuttons .open{
+    background: #f5f0f0;
+    border-color: #0d0c0c;
+}
+
+.mybuttons .open:hover, .mybuttons .edit:hover, .mybuttons .delete:hover{
+    border: 0.5px solid #0d0c0c;
+    transition: 800ms;
+}
+
+.mybuttons .edit{
+    background: #f5f0f0;
+    border-color: #0d0c0c;
+}
+
+.mybuttons .delete{
+    background: #f5f0f0;
+    border-color: #0d0c0c;     
+}
+
+.task-data{
+    color: #904d4d;
+}
+
+.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+

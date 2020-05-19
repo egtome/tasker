@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Tasker | ' ~ task.title }}{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>{{ task.title }}</h1>
+    <p class="task-data">
+        {{ 'Created by ' ~ (task.user.name|capitalize ~  ' ' ~ task.user.surname|capitalize) ~ ' on ' ~ task.createdAt|date('d/m/Y H:i:s') }} | {% include 'includes/task-priority.html.twig' %} | {{ task.hours ~ 'hs' }}
+    </p>
+    <p>
+        {{ task.content }}
+    </p>
+</div>
+{% endblock %}

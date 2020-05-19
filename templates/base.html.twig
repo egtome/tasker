@@ -3,9 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/style.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
     </head>
     <body>
+        {% block header %}
+            <div id="header">
+                <h1>Tasker | Symfony</h1>
+                <ul id="menu">
+                    {% if app.user is empty %}
+                        <li><a href="{{ path('login') }}">Login</a></li>
+                        <li><a href="{{ path('register') }}">Register</a></li>
+                    {% else %}                   
+                        <li><a href="{{ path('tasks') }}">Home</a></li>
+                        <li><a href="{{ path('tasks_list', {id: app.user.id}) }}">My Tasks</a></li>                    
+                        <li><a href="{{ path('tasks_create') }}">New Task</a></li>                    
+                        <li class="right"><a href="{{ path('logout') }}">Logout</a></li>
+                        <li class="right"><a href="">{{ app.user.name ~ ' ' ~ app.user.surname }}</a></li>                        
+                    {% endif %}    
+                        
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

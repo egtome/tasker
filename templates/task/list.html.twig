@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ user.name ~ ' task list'}} {% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>{{ user.name ~ ' task list'}}</h1>
+    {% include 'includes/task-list.html.twig' %} 
+</div>
+{% endblock %}

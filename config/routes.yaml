@@ -1,3 +1,34 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+tasks:
+    path: /
+    controller: App\Controller\TaskController::index
+    
+tasks_create:
+    path: /task/create
+    controller: App\Controller\TaskController::create    
+    
+tasks_view:
+    path: /task/{id}
+    controller: App\Controller\TaskController::view
+    
+tasks_list:
+    path: /task/user/{id}
+    controller: App\Controller\TaskController::list
+    
+tasks_edit:
+    path: /task/edit/{id}
+    controller: App\Controller\TaskController::edit
+    
+tasks_delete:
+    path: /task/delete/{id}
+    controller: App\Controller\TaskController::delete
+    
+register:
+    path: /register
+    controller: App\Controller\UserController::register
+
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+    
+logout:
+    path: /logout

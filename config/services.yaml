@@ -25,3 +25,24 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\EventListener\KernelException:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+            
+    App\EventSubscriber\KernelSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }
+            
+    App\EventListener\TaskListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist } 
+            - { name: doctrine.event_listener, event: postPersist }  
+            - { name: kernel.event_listener, event: task.opened, method: taskOpened }  
+            
+    App\EventSubscriber\ToDoSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber }
+            
+    App\CustomSubscribers\TaskSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }

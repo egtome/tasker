@@ -1,0 +1,30 @@
+{% if tasks|length %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Hours</th>
+            <th>Created</th>
+            <th>Actions</th>         
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>
+                    {% include 'includes/task-priority.html.twig' %} 
+                </td>
+                <td>{{ task.hours|trans }}</td>
+                <td>{{ task.createdAt|date('d/m/Y H:i:s') }}</td>
+                <td class="mybuttons">
+                    <a href="{{ path('tasks_view',{'id':task.id}) }}" class="open">open</a>
+                    {% if task.user.id == app.user.id %}
+                        <a href="{{ path('tasks_edit',{'id':task.id}) }}" class="edit">edit</a>
+                        <a href="{{ path('tasks_delete',{'id':task.id}) }}" class="delete">delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}   
+    <h3>No tasks</h3>
+{% endif %}    
